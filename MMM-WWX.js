@@ -13,7 +13,11 @@ Module.register("MMM-WWX",{
 			color: "",
 			font: ""
 	},
-
+  iframe_src: "https://darksky.net/widget/default/40.683,-73.9708/us12/en.js?width=100%&height=350&\
+title=New York,NY&textColor=ffffff&bgColor=000000&transparency=false&skyColor=undefined&fontFamily=Default&customFont=&units=us&htColor=333333&ltColor=C7C7C7&\
+displaySum=yes&displayHeader=yes",
+  jswrapper_front:"<html><body><script type='text/javascript' src='",
+	jswrapper_back: "'></script></body><html>",
 	getStyles: function() {
         return ["MMM-WWX.css"];
     },
@@ -29,29 +33,9 @@ Module.register("MMM-WWX",{
 
 	//	Tomorrow try double quotes interior and single quotes for the entire url
 
-
-        iframe.srcdoc = `<html>
-
-<body>
-
-
-
-<iframe srcdoc="<html>
-
-<body>
-
-<script type='text/javascript' src='https://darksky.net/widget/default/40.683,-73.9708/us12/en.js?width=100%&height=350&title=New York, NY&textColor=ffffff&bgColor=000000&transparency=false&skyColor=undefined&fontFamily=Default&customFont=&units=us&htColor=333333&ltColor=C7C7C7&displaySum=yes&displayHeader=yes'></script>
-
-</body>
-
-<html>"></iframe>
-
-
-
-</body>
-
-<html>>`;
-
+				// use double quotes outside, single quotes inside
+				// and use \ as the line continuation character
+       iframe.srcdoc = this.jswrapper_front+this.iframe_src+this.jswrapper_back
 
 
         // smallest
