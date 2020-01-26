@@ -96,19 +96,15 @@ config: {
 
 ## Language List
 
-* English en
-* Deutsch de
-* Spanish es
-* French fr
-* Italian it
-* Nederlands nl
-* Arabic ar
-* Chinese zh
-* Pig Latin x-pig-latin
-
-## Attention!
-
-* Not all config options apply to every style
+* English = en
+* Deutsch = de
+* Spanish = es
+* French = fr
+* Italian = it
+* Nederlands = nl
+* Arabic = ar
+* Chinese = zh
+* Pig Latin = x-pig-latin
 
 ## My unending gratitude to sdetweil and cowboysdude
 
