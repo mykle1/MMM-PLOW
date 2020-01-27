@@ -8,10 +8,10 @@
 Module.register("MMM-WWX",{
 
 	defaults: {
-		  languages: "",              //
+		  languages: "",              // See language list
 		  style: "",                  // See Style list
 			latLong: "",                // Your latitude and longitude seperated by a comma
-			title: "",                  // Think of this as a header
+			title: "",                  // Location seems the most logical
 			tempUnits: "",              // us = F or uk for C
 			textColor: "",              // Hex color codes. No #
 			font: "",                   // See font list
@@ -23,8 +23,10 @@ Module.register("MMM-WWX",{
 			tempColor: "",              // for graph-bar. Hex color codes. No #
 			currentDetails: "",         // for graph-bar. true or false
 			graphType: "",              // when style is graph
-			lineColor: "",        // when style is graph.  Hex color codes. No #
-			markerColor: "",      // when style is graph.  Hex color codes. No #
+			lineColor: "",              // when style is graph.  Hex color codes. No #
+			markerColor: "",            // when style is graph.  Hex color codes. No #
+			animationSpeed: 3000,
+			updateInterval: 30 * 60 * 1000,
 	},
 
 	// use double quotes outside, single quotes inside
@@ -36,6 +38,17 @@ Module.register("MMM-WWX",{
   iframe_src: "https://darksky.net/widget/default/40.683,-74.9708/us12/en.js?width=100%&height=350&title=This is like a header&textColor=ffffff&bgColor=000000&fontFamily=Default&htColor=ffffff&ltColor=00dfff&displaySum=yes&displayHeader=yes", /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	jswrapper_back: "'></script></body><html>",
+
+
+	start: function () {
+	self = this;
+
+	// ADDED: Schedule update timer courtesy of ninjabreadman
+	setInterval(function() {
+	self.updateDom(self.config.animationSpeed || 0); // use config.animationSpeed or revert to zero @ninjabreadman
+	}, this.config.updateInterval);
+
+},
 
 
 	getStyles: function() {
@@ -73,7 +86,7 @@ Module.register("MMM-WWX",{
 
 		// type="text/javascript";
     // insert config options
-    this.iframe_src= "https://darksky.net/widget/"+this.config.style+"/"+this.config.latLong+"/"+this.config.tempUnits+"12/"+this.config.languages+".js?width=100%&height=350&title="+this.config.title+"&textColor="+this.config.textColor+"&bgColor=000000&fontFamily="+this.config.font+"&htColor="+this.config.htColor+"&ltColor="+this.config.ltColor+"&displaySum="+this.config.displaySum+"&displayHeader="+this.config.displayHeader+"&timeColor="+this.config.timeColor+"&tempColor="+this.config.tempColor+"&currentDetailsOption="+this.config.currentDetails+"&graph="+this.config.graphType+"&lineColor="+this.config.lineColor+"&markerColor="+this.config.markerColor+"";
+    this.iframe_src= "https://darksky.net/widget/"+this.config.style+"/"+this.config.latLong+"/"+this.config.tempUnits+"12/"+this.config.languages+".js?width=100%&height=350&title="+this.config.title+"&textColor="+this.config.textColor+"&bgColor=000000&fontFamily="+this.config.font+"&htColor="+this.config.htColor+"&ltColor="+this.config.ltColor+"&displaySum="+this.config.displaySum+"&displayHeader="+this.config.displayHeader+"&timeColor="+this.config.timeColor+"&tempColor="+this.config.tempColor+"&currentDetailsOption="+this.config.currentDetails+"&graph="+this.config.graphType+"&lineColor="+this.config.lineColor+"&markerColor="+this.config.markerColor+""  + new Date();
 
     // join the parts in the Dom
     iframe.srcdoc = this.jswrapper_front+this.iframe_src+this.jswrapper_back;
