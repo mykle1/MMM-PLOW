@@ -22,13 +22,13 @@
 
 ![](images/7dayPlus.png)
 
-#### Hourly bar graph with or without text forecast - (config style: "graph-bar",)
+#### Hourly bar graph with or without current conditions - (config style: "graph-bar",)
 
 ![](images/barGraph.png)
 
 #### Temp, Precip, Humidity, Wind, Pressure, UV and Visibility line graphs - (config style: "graph" and config graphType: "wind_graph",)
 
-![](images/temperature.png)
+![](images/temp.png)
 ![](images/precip.png)
 
 #### Multiple instances by simply adding more config entries
