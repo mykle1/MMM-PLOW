@@ -48,12 +48,12 @@ disabled: false,
 module: 'MMM-WWX',
 position: 'middle center',
 config: {
-   languages: "en",                          // en, de, es, fr, it, nl, ar, zh, x-pig-latin
-   style: "default",                         // See Style list
-   latLong: "12.345,-67.8910",               // Your latitude and longitude seperated by a comma
+   languages: "es",                          // en, de, es, fr, it, nl, ar, zh, x-pig-latin
+   style: "responsive",                      // See Style list
+   latLong: "40.683,-74.9708",               // Your latitude and longitude seperated by a comma
    title: "New Dorp",                        // Location seems logical
    tempUnits: "us",                          // us = F - uk = C
-   textColor: "ffffff",                      // Hex color codes. No # !!!
+   textColor: "00dfff",                      // Hex color codes. No # !!!
    font: "default",                          // See font list
    htColor: "ffffff",                        // high temp color. Hex color codes. No #
    ltColor: "00dfff",                        // low temp color. Hex color codes. No #
@@ -65,6 +65,18 @@ config: {
    graphType: "precip_graph",                // when style is graph
    lineColor: "dd66cf",                      // when style is graph
    markerColor: "ffffff",                    // when style is graph
+   //  when style: "responsive" only ///////////////////////////////////
+   height: "200px",                          // when style is responsive
+   width: "1200px",                          // when style is responsive
+   location: "staten-island",                // See instructions for location when style is responsive
+   locationCode: "40d58n74d15",              // See instructions for locationCode when style is responsive
+   label: "New Dorp",                        // when style is responsive
+   label2: "Staten Island",                  // when style is responsive
+   days: "7",                                // when style is responsive *** 3, 5 or 7 ***
+   theme: "random_grey",                                // dark or random_grey
+   /////////////////////////////////////////////////////////////////////
+   animationSpeed: 3000,
+   updateInterval: 10 * 60 * 1000,
    }
 },
 ```
@@ -105,6 +117,17 @@ config: {
 * Arabic = ar
 * Chinese = zh
 * Pig Latin = x-pig-latin
+
+## Instructions for location and locationCode when using config style: "responsive",
+
+* Go to https://weatherwidget.io/
+
+![](images/333.png) <-- Follow these directions
+
+
+![](images/444.png) <-- the locationCode and location you need are under the red xxxxxxxxxx's
+
+
 
 ## My unending gratitude to sdetweil and cowboysdude
 
