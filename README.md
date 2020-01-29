@@ -122,10 +122,12 @@ config: {
 
 * Go to https://weatherwidget.io/
 
-![](images/333.png) <-- Follow these directions
+#### Follow these directions
+![](images/333.png)
 
-
-![](images/444.png) <-- the locationCode and location you need are under the red xxxxxxxxxx's
+#### And follow these directions, too.
+![](images/444.png)
+The locationCode and location you need are under the red xxxxxxxxxx's. Enter those in config
 
 
 
