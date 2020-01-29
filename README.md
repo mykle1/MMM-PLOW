@@ -88,6 +88,7 @@ config: {
 * default
 * graph_bar
 * graph
+* responsive
 
 
 ## Attention!
@@ -127,7 +128,7 @@ config: {
 
 #### And follow these directions, too.
 ![](images/444.png)
-The locationCode and location you need are under the red xxxxxxxxxx's. Enter those in config
+#### The locationCode and location you need are under the red xxxxxxxxxx's. Enter those in config
 
 
 
