@@ -6,32 +6,32 @@
 
 ## Examples
 
-* Minimal view - (config style: "default-small",)
+#### Minimal view - (config style: "default-small",)
 ![](images/minimal.png)
 -
 
-* Minimal plus current conditions - (config style: "small",)
+#### Minimal plus current conditions - (config style: "small",)
 ![](images/minimalPlus.png)
 -
 
-* 7 day forecast - (config style: "default",)
+#### 7 day forecast - (config style: "default",)
 ![](images/7day.png)
 -
 
-* 7 day forecast w/ current conditions - (config style: "default",)
+#### 7 day forecast w/ current conditions - (config style: "default",)
 ![](images/7dayPlus.png)
 -
 
-* Hourly bar graph w/ current conditions - (config style: "graph-bar",)
+#### Hourly bar graph w/ current conditions - (config style: "graph-bar",)
 ![](images/barGraph.png)
 -
 
-* Temp, Precip, Humidity, Wind, Pressure, UV and Visibility line graphs
+#### Temp, Precip, Humidity, Wind, Pressure, UV and Visibility line graphs
 ![](images/temp.png)
 ![](images/precip.png)
 -
 
-* Multiple instances by simply adding more config entries
+#### Multiple instances by simply adding more config entries
 ![](images/multiple.png)
 -
 
